@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "src/app/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@microboat/web/components",
+    "utils": "@microboat/web/lib/utils",
+    "ui": "@microboat/web/components/ui",
+    "lib": "@microboat/web/lib",
+    "hooks": "@microboat/web/hooks"
+  },
+  "iconLibrary": "lucide"
+}

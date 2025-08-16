@@ -1,0 +1,709 @@
+{
+  "app": {
+    "name": "NEXTDEVKIT",
+    "metadata": {
+      "title": "NEXTDEVKIT - Next.js Starter Kit",
+      "description": "The Ultimate Next.js Starter Kit for Your Next Project",
+      "keywords": "Next.js, Starter Kit, Next.js SaaS Template, Next.js Boilerplate"
+    }
+  },
+  "common": {
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "save": "Save",
+    "loading": "Loading...",
+    "success": "Success",
+    "error": "Error"
+  },
+  "menu": {
+    "application": {
+      "title": "Application",
+      "dashboard": {
+        "title": "Dashboard"
+      }
+    },
+    "ai": {
+      "title": "AI Demo",
+      "chat": {
+        "title": "Chat"
+      },
+      "voice": {
+        "title": "Voice"
+      },
+      "media": {
+        "title": "Image & Video"
+      }
+    },
+    "admin": {
+      "title": "Admin",
+      "users": {
+        "title": "Users"
+      }
+    },
+    "settings": {
+      "title": "Settings"
+    },
+    "users": {
+      "darkMode": "Dark Mode",
+      "mode": {
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+      },
+      "settings": "Settings",
+      "logout": "Logout"
+    }
+  },
+  "documentation": {
+    "title": "Documentation",
+    "homepage": "Home"
+  },
+  "blog": {
+    "title": "Blog Posts",
+    "description": "Discover the latest insights and tutorials about modern web development, UI design, and component-driven architecture.",
+    "keywords": "Next.js Starter Kit Blog, Next.js SaaS Blog, Next.js Boilerplate Blog"
+  },
+  "navigation": {
+    "login": "Login",
+    "dashboard": "Dashboard",
+    "getStarted": "Get Started",
+    "products": {
+      "label": "Products",
+      "dxPlatform": {
+        "title": "DX Platform",
+        "previews": {
+          "label": "Previews",
+          "description": "Helping teams ship 6× faster"
+        },
+        "ai": {
+          "label": "AI",
+          "description": "Powering breakthroughs"
+        }
+      },
+      "infrastructure": {
+        "title": "Managed Infrastructure",
+        "rendering": {
+          "label": "Rendering",
+          "description": "Fast, scalable, and reliable"
+        },
+        "observability": {
+          "label": "Observability",
+          "description": "Trace every step"
+        },
+        "security": {
+          "label": "Security",
+          "description": "Scale without compromising"
+        }
+      },
+      "openSource": {
+        "title": "Open Source",
+        "nextjs": {
+          "label": "Next.js",
+          "description": "The native Next.js platform"
+        },
+        "turborepo": {
+          "label": "Turborepo",
+          "description": "Speed with Enterprise scale"
+        },
+        "aiSdk": {
+          "label": "AI SDK",
+          "description": "The AI Toolkit for TypeScript"
+        }
+      }
+    },
+    "solutions": {
+      "label": "Solutions",
+      "useCases": {
+        "title": "Use Cases",
+        "aiApps": {
+          "label": "AI Apps",
+          "description": "Deploy at the speed of AI"
+        },
+        "commerce": {
+          "label": "Composable Commerce",
+          "description": "Power storefronts that convert"
+        },
+        "marketing": {
+          "label": "Marketing Sites",
+          "description": "Launch campaigns fast"
+        },
+        "multiTenant": {
+          "label": "Multi-tenant Platforms",
+          "description": "Scale apps with one codebase"
+        },
+        "webApps": {
+          "label": "Web Apps",
+          "description": "Ship features, not infrastructure"
+        }
+      },
+      "users": {
+        "title": "Users",
+        "platformEngineers": {
+          "label": "Platform Engineers",
+          "description": "Automate away repetition"
+        },
+        "designEngineers": {
+          "label": "Design Engineers",
+          "description": "Deploy for every idea"
+        }
+      }
+    },
+    "blog": {
+      "label": "Blog"
+    },
+    "docs": {
+      "label": "Docs"
+    },
+    "pricing": {
+      "label": "Pricing"
+    }
+  },
+  "contact": {
+    "title": "Contact us",
+    "description": "We're here to help you with any questions or concerns you may have. Please fill out the form below and we'll get back to you as soon as possible.",
+    "keywords": "contact, support, help, questions, concerns, inquiry",
+    "subtitle": "We're here to help you with any questions or concerns you may have. Please fill out the form below and we'll get back to you as soon as possible.",
+    "corporateOffice": "Corporate office",
+    "address": "1 Carlsberg Close\n1260 Hillview, Australia",
+    "emailUs": "Email us",
+    "inquiries": "Inquiries",
+    "form": {
+      "fullName": "Full name",
+      "message": "Your message",
+      "submit": "Submit",
+      "submitting": "Submitting...",
+      "success": "Message sent successfully!",
+      "error": "Failed to send message. Please try again.",
+      "nameMinLength": "Name must be at least 2 characters",
+      "nameMaxLength": "Name must not exceed 50 characters",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "messageMinLength": "Message must be at least 10 characters",
+      "messageMaxLength": "Message must not exceed 5000 characters"
+    }
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Subscribe to our newsletter",
+      "description": "Join our newsletter for the latest updates and exclusive offers.",
+      "inputPlaceholder": "Enter your email",
+      "submitAriaLabel": "Subscribe",
+      "subscribeSuccess": "Successfully subscribed to newsletter!",
+      "subscribeError": "Failed to subscribe to newsletter. Please try again."
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "home": "Home",
+      "features": "Features",
+      "services": "Services",
+      "pricing": "Pricing",
+      "testimonials": "Testimonials",
+      "faq": "FAQ"
+    },
+    "resources": {
+      "title": "Resources",
+      "gettingStarted": "Getting Started",
+      "blog": "Blog",
+      "docs": "Docs",
+      "contact": "Contact",
+      "changelog": "Changelog"
+    },
+    "social": {
+      "title": "Follow Us"
+    },
+    "copyright": "© 2025 Your Company. All rights reserved.",
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Settings"
+    }
+  },
+  "faq": {
+    "heading": "Frequently asked questions",
+    "description": "Everything you need to know about our Next.js starter template. Can't find the answer you're looking for? Feel free to contact our support team.",
+    "items": {
+      "faq-1": {
+        "id": "faq-1",
+        "question": "Do you offer a free trial?",
+        "answer": "Yes, we offer a 14-day free trial. You can cancel at any time during the trial period and you won't be charged."
+      },
+      "faq-2": {
+        "id": "faq-2",
+        "question": "Can I cancel my subscription?",
+        "answer": "You can cancel your subscription at any time. You can do this from your account settings."
+      },
+      "faq-3": {
+        "id": "faq-3",
+        "question": "Where can I find my invoices?",
+        "answer": "You can find your invoices in your account settings."
+      },
+      "faq-4": {
+        "id": "faq-4",
+        "question": "What payment methods do you accept?",
+        "answer": "We accept all major credit cards and PayPal."
+      },
+      "faq-5": {
+        "id": "faq-5",
+        "question": "Can I upgrade or downgrade my plan?",
+        "answer": "Yes, you can upgrade or downgrade your plan at any time. You can do this from your account settings."
+      },
+      "faq-6": {
+        "id": "faq-6",
+        "question": "Do you offer discounts for non-profits?",
+        "answer": "Yes, we offer a 50% discount for non-profits. Please contact us to learn more."
+      }
+    },
+    "supportHeading": "Still have questions?",
+    "supportDescription": "Can't find the answer you're looking for? Our support team is here to help with any technical questions or concerns.",
+    "supportButtonText": "Contact Support"
+  },
+  "pricing": {
+    "checkout": {
+      "failed": "Failed to create checkout link"
+    },
+    "title": "Pricing",
+    "subtitle": "Choose the best plan for your needs",
+    "frequencies": {
+      "monthly": "Monthly",
+      "yearly": "Yearly"
+    },
+    "popularBadge": "Most Popular",
+    "pricePerMonth": "Per month/user",
+    "cta": "Get Started",
+    "ctaWithTrial": "{days} Days Free Trial",
+    "ctaFree": "Get Started",
+    "ctaContact": "Contact Us",
+    "ctaManage": "Upgrade",
+    "pricingFree": "Free",
+    "pricingEnterprise": "Custom",
+    "products": {
+      "free": {
+        "title": "Starter",
+        "description": "For your hobby projects",
+        "features": {
+          "feature1": "Up to 5 projects",
+          "feature2": "Basic analytics",
+          "feature3": "Community support"
+        }
+      },
+      "pro": {
+        "title": "Pro",
+        "description": "Great for small businesses",
+        "features": {
+          "feature1": "Unlimited projects",
+          "feature2": "Advanced analytics",
+          "feature3": "Priority support",
+          "feature4": "Team collaboration tools"
+        }
+      },
+      "lifetime": {
+        "title": "Lifetime",
+        "description": "For your lifetime",
+        "features": {
+          "feature1": "Everything in Professional",
+          "feature2": "Advanced security features",
+          "feature3": "Dedicated account manager"
+        }
+      },
+      "enterprise": {
+        "title": "Enterprise",
+        "description": "For large-scale deployments",
+        "features": {
+          "feature1": "Everything in Business",
+          "feature2": "On-premise deployment",
+          "feature3": "Custom development",
+          "feature4": "Unlimited users",
+          "feature5": "White-label solution"
+        }
+      }
+    }
+  },
+  "changelog": {
+    "title": "Changelog",
+    "description": "Get the latest updates and improvements to our platform.",
+    "keywords": "changelog, updates, improvements, releases, features, bug fixes, version history",
+    "button": {
+      "text": "Learn more"
+    },
+    "entries": {
+      "v1_3_0": {
+        "version": "Version 1.3.0",
+        "date": "31 July 2025",
+        "title": "Enhanced Documentation and Changelog",
+        "description": "We've support for Chinese documentation and changelog. You can now read the documentation in Chinese and add the changelog page.",
+        "items": {
+          "item1": "Add new documentation translation: Chinese",
+          "item2": "Add changelog page"
+        }
+      },
+      "v1_2_0": {
+        "version": "Version 1.2.0",
+        "date": "21 July 2025",
+        "title": "Enhanced Payments and Affiliate System",
+        "description": "We've added a new payments(creem.io) and affiliate(Affonso) to our template. You can now easily manage your payments and affiliates.",
+        "items": {
+          "item1": "Add new payment provider: Creem.io",
+          "item2": "Add new affiliate provider: Affonso"
+        }
+      },
+      "v1_0_0": {
+        "version": "Version 1.0.0",
+        "date": "15 July 2025",
+        "title": "First version of our saas template",
+        "description": "Introducing a new saas template to help you ship your saas product faster. We are excited to launch our template and help you get started. We are always working to improve our template and your experience."
+      }
+    }
+  },
+  "hero": {
+    "badge": "New",
+    "badgeText": "Introducing Support for AI Models",
+    "heading": "The Ultimate Next.js Starter Kit for Your Next Project",
+    "highlightHeading": "Next.js Starter Kit",
+    "subHeading": "Build and Ship faster with the Next.js Starter Kit. Ship in days, not months.",
+    "buttons": {
+      "getStarted": "Get Started",
+      "seeDemo": "See Demo"
+    },
+    "AnimatedTooltipTitle": "LOVED BY DEVELOPERS WORLDWIDE"
+  },
+  "testimonials": {
+    "title": "Trusted by developers worldwide",
+    "description": "Join thousands of developers who are already building the future with our AI platform",
+    "items": {
+      "testimonial-1": {
+        "author": {
+          "name": "Emma Thompson",
+          "handle": "@emmaai",
+          "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
+        },
+        "text": "Using this AI platform has transformed how we handle data analysis. The speed and accuracy are unprecedented.",
+        "href": "https://twitter.com/emmaai"
+      },
+      "testimonial-2": {
+        "author": {
+          "name": "David Park",
+          "handle": "@davidtech",
+          "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+        },
+        "text": "The API integration is flawless. We've reduced our development time by 60% since implementing this solution.",
+        "href": "https://twitter.com/davidtech"
+      },
+      "testimonial-3": {
+        "author": {
+          "name": "Sofia Rodriguez",
+          "handle": "@sofiaml",
+          "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
+        },
+        "text": "Finally, an AI tool that actually understands context! The accuracy in natural language processing is impressive."
+      }
+    }
+  },
+  "featureSection": {
+    "steps": {
+      "title": "How to get started",
+      "items": {
+        "step-1": {
+          "step": "Step 1",
+          "title": "Clone the Template",
+          "content": "Clone or download the Next.js starter template from GitHub"
+        },
+        "step-2": {
+          "step": "Step 2",
+          "title": "Configure Your Project",
+          "content": "Set up your environment variables, and customize the template to match your project needs."
+        },
+        "step-3": {
+          "step": "Step 3",
+          "title": "Deploy and Launch",
+          "content": "Deploy your application to your preferred hosting platform like Vercel, Cloudflare, or AWS"
+        }
+      }
+    },
+    "tabs": {
+      "heading": "A Collection of Components Built With Shadcn & Tailwind",
+      "description": "Join us to build flawless web solutions.",
+      "items": {
+        "tab-1": {
+          "label": "Customizable Themes",
+          "content": {
+            "badge": "Beautiful & Modern",
+            "title": "Customize themes with minimal code changes.",
+            "description": "Beautiful and modern styling that can be easily customized to match your brand. Change colors, fonts, and layouts with just a few lines of code.",
+            "buttonText": "View Themes"
+          }
+        },
+        "tab-2": {
+          "label": "Multi-Platform Deploy",
+          "content": {
+            "badge": "Deploy Anywhere",
+            "title": "Deploy to any platform natively.",
+            "description": "Native support for deployment to Cloudflare, AWS, Vercel, and other major platforms. Deploy everywhere with optimized configurations.",
+            "buttonText": "View Deployments"
+          }
+        },
+        "tab-3": {
+          "label": "Modern Tech Stack",
+          "content": {
+            "badge": "Latest Technology",
+            "title": "Built with modern Next.js stack.",
+            "description": "Powered by the latest Next.js, Shadcn UI, Better Auth, Drizzle ORM, and other cutting-edge technologies for the best developer experience.",
+            "buttonText": "View Tech Stack"
+          }
+        }
+      }
+    }
+  },
+  "mail": {
+    "common": {
+      "openLinkInBrowser": "If you're having trouble clicking the button, copy and paste the URL below into your web browser:\n",
+      "useLink": "You can also use the following link:",
+      "otp": "Your verification code:"
+    },
+    "emailVerification": {
+      "subject": "Verify your email address",
+      "body": "Hi {name},\n\nWelcome! Please verify your email address by clicking the button below to complete your account setup.\n\nThis helps us keep your account secure and ensures you receive important updates.",
+      "confirmEmail": "Verify Email"
+    },
+    "magicLink": {
+      "subject": "Sign in to your account",
+      "body": "Hey,\n\nClick the button below to securely sign in to your account.\n\nThis link will expire in 15 minutes for your security.",
+      "login": "Sign In"
+    },
+    "forgotPassword": {
+      "subject": "Reset your password",
+      "body": "Hi {name},\n\nWe received a request to reset your password. Click the button below to create a new password.\n\nIf you didn't request this, you can safely ignore this email.",
+      "resetPassword": "Reset Password"
+    },
+    "newsletterSignup": {
+      "subject": "Thank you for subscribing to our newsletter!",
+      "body": "Hey,\n\nThank you for subscribing to our newsletter! 🎉\n\nYou'll receive the latest updates, exclusive content, and special offers directly in your inbox.\n\nWe're excited to have you on board!"
+    },
+    "contactForm": {
+      "subject": "New Contact Form Message",
+      "greeting": "You have received a new message from {name}:",
+      "fromLabel": "From:",
+      "emailLabel": "Email:",
+      "messageLabel": "Message:"
+    }
+  },
+  "settings": {
+    "save": "Save",
+    "tabs": {
+      "heading": "Settings",
+      "description": "Manage and update your account info",
+      "account": "Account",
+      "security": "Security",
+      "billing": "Billing",
+      "notification": "Notifications"
+    },
+    "account": {
+      "avatar": {
+        "title": "Avatar",
+        "description": "Click on your avatar to upload a new avatar.",
+        "uploading": "Uploading avatar...",
+        "supportedFormats": "Supports JPG, PNG up to 5MB",
+        "changeAvatar": "Change avatar",
+        "updateSuccess": "Avatar updated successfully!",
+        "uploadFailed": "Failed to upload avatar. Please try again.",
+        "invalidFileType": "Please select a valid image file (JPG, PNG)",
+        "fileTooLarge": "File size must be less than 5MB"
+      },
+      "general": {
+        "title": "General",
+        "description": "Update your account settings.",
+        "save": "Save",
+        "name": "Name",
+        "email": "Email",
+        "emailNote": "To change your email, enter the new email and hit save. You will have to confirm the new email before it will become active.",
+        "emailCanNotBeUpdated": "Please contact us to change your email.",
+        "nameUpdateSuccess": "Name updated successfully!",
+        "emailUpdateSuccess": "Email change request sent! Please follow these steps: 1) First, click the verify link in your OLD email address, 2) Then, click the verify link in your NEW email address. The new email will become active only after completing both verification steps."
+      },
+      "languageSettings": {
+        "title": "Language Settings",
+        "description": "Choose your preferred language for the interface.",
+        "language": {
+          "title": "Interface Language"
+        }
+      },
+      "deleteAccount": {
+        "title": "Delete Account",
+        "description": "We'd hate to see you go, but you're welcome to delete your account anytime. Just remember, once you delete it, it's gone forever.",
+        "button": "Delete Account",
+        "confirmation": "Are you absolutely sure you want to delete your account? This action cannot be undone and will permanently remove all your data, settings, and content.",
+        "confirmButton": "Delete Account",
+        "deleting": "Deleting...",
+        "notifications": {
+          "success": "Your account has been successfully deleted. You will be redirected to the sign-in page.",
+          "error": "Failed to delete account. Please try again or contact support if the problem persists."
+        }
+      }
+    },
+    "security": {
+      "title": "Password",
+      "description": "Update your password to ensure your account remains private and secure.",
+      "save": "Save",
+      "oldPassword": "Old password",
+      "newPassword": "New password",
+      "passwordUpdateSuccess": "Password updated successfully!",
+      "passwordRules": {
+        "length": "At least 8 characters",
+        "uppercase": "At least 1 uppercase letter",
+        "lowercase": "At least 1 lowercase letter",
+        "number": "At least 1 number"
+      },
+      "connectedAccounts": {
+        "title": "Connected Accounts",
+        "description": "Manage your connected social media accounts for easier sign-in.",
+        "connect": "Connect"
+      }
+    },
+    "billing": {
+      "title": "Current plan",
+      "description": "Manage your billing and subscription.",
+      "currentPlan": {
+        "free": "Free",
+        "upgrade": "Upgrade plan"
+      },
+      "manage": {
+        "manageBilling": "Manage Billing",
+        "intervals": {
+          "month": "month",
+          "year": "year"
+        },
+        "subscription": {
+          "expiresOn": "expires on",
+          "renewsOn": "renews on",
+          "per": "per "
+        },
+        "status": {
+          "trial": "Trial",
+          "canceled": "Canceled"
+        }
+      }
+    },
+    "notification": {
+      "newsletter": {
+        "title": "Newsletter",
+        "description": "Stay updated with our latest news and updates",
+        "subscribe": "Subscribe to newsletter",
+        "subscribeDescription": "Get the latest updates and exclusive content delivered to your inbox",
+        "subscribeSuccess": "Successfully subscribed to newsletter!",
+        "unsubscribeSuccess": "Successfully unsubscribed from newsletter!",
+        "subscribeError": "Failed to subscribe to newsletter. Please try again.",
+        "unsubscribeError": "Failed to unsubscribe from newsletter. Please try again."
+      },
+      "mobile": {
+        "title": "Mobile App",
+        "push": "Push Notifications",
+        "pushDescription": "Download our mobile app for on-the-go learning."
+      },
+      "reminders": {
+        "title": "Reminders",
+        "practice": "Practice reminder",
+        "practiceDescription": "Reminders to continue your learning journey."
+      }
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome back",
+      "subtitle": "Please enter your credentials to sign in.",
+      "emailLabel": "Email address",
+      "emailPlaceholder": "jane@example.com",
+      "passwordLabel": "Password",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "forgotPassword": "Forgot my password",
+      "submitButton": "Continue",
+      "submittingButton": "Signing in...",
+      "dividerText": "or",
+      "footerText": "Don't have an account?",
+      "footerLink": "Sign up"
+    },
+    "signup": {
+      "title": "Create an account",
+      "subtitle": "Please enter your credentials to create an account.",
+      "nameLabel": "Name",
+      "namePlaceholder": "John Doe",
+      "emailLabel": "Email address",
+      "emailPlaceholder": "jane@example.com",
+      "passwordLabel": "Password",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "submitButton": "Create account",
+      "submittingButton": "Creating account...",
+      "successMessage": "Account created successfully! Please check your email to verify your account.",
+      "dividerText": "or",
+      "footerText": "Already have an account?",
+      "footerLink": "Sign in"
+    },
+    "forgotPassword": {
+      "title": "Forgot your password?",
+      "subtitle": "Enter your email below and we'll send you a link to reset it.",
+      "emailLabel": "Email address",
+      "emailPlaceholder": "jane@example.com",
+      "submitButton": "Send reset password link",
+      "submittingButton": "Sending...",
+      "successMessage": "We have sent you a link to reset your password. Please check your email.",
+      "footerText": "Remember your password?",
+      "footerLink": "Back to Login"
+    },
+    "resetPassword": {
+      "title": "Reset your password",
+      "subtitle": "Please enter a new password for your account.",
+      "invalidLinkTitle": "Invalid Reset Link",
+      "invalidLinkSubtitle": "This password reset link is invalid or has expired.",
+      "invalidLinkError": "Invalid or expired reset link. Please request a new password reset.",
+      "invalidLinkAction": "Request new reset link",
+      "invalidTokenError": "Invalid or missing reset token. Please request a new password reset link.",
+      "newPasswordLabel": "New Password",
+      "confirmPasswordLabel": "Confirm Password",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "submitButton": "Reset password",
+      "submittingButton": "Resetting password...",
+      "successMessage": "Your password has been reset successfully. You can now login with your new password.",
+      "footerText": "Remember your password?",
+      "footerLink": "Back to Login"
+    },
+    "validation": {
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "passwordRequired": "Password is required",
+      "passwordMinLength": "Password must be at least 8 characters",
+      "passwordMaxLength": "Password must be less than 100 characters",
+      "nameRequired": "Name is required",
+      "nameMaxLength": "must be less than 50 characters",
+      "confirmPasswordRequired": "Please confirm your password",
+      "passwordsNotMatch": "Passwords don't match"
+    },
+    "errors": {
+      "unknown": "Something went wrong. Please try again.",
+      "userNotFound": "This user does not exists",
+      "failedToCreateUser": "Could not create user. Please try again.",
+      "failedToCreateSession": "Could not create a session. Please try again.",
+      "failedToUpdateUser": "Could not update user. Please try again.",
+      "failedToGetSession": "Could not get the session.",
+      "invalidPassword": "The entered password is incorrect.",
+      "invalidEmail": "The entered email is invalid.",
+      "invalidToken": "The token you entered is invalid or has expired.",
+      "invalidEmailOrPassword": "The credentials you entered are invalid. Please check them and try again.",
+      "socialAccountAlreadyLinked": "This account is already linked to a user.",
+      "credentialAccountNotFound": "Account not found.",
+      "emailCanNotBeUpdated": "Email could not be updated. Please try again.",
+      "emailNotVerified": "Please verify your email first before logging in.",
+      "failedToGetUserInfo": "Could not load user information.",
+      "idTokenNotSupported": "ID token is not supported.",
+      "passwordTooLong": "Password is too long.",
+      "passwordTooShort": "Password is too short.",
+      "providerNotFound": "This provider is not suppported.",
+      "userEmailNotFound": "Email not found.",
+      "userAlreadyExists": "This user already exists.",
+      "sessionExpired": "The session has expired.",
+      "accountNotFound": "Account not found",
+      "failedToUnlinkLastAccount": "Failed to unlink account"
+    }
+  }
+}
