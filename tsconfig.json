@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "esModuleInterop": true,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@microboat/web": ["./apps/web/src"],
+      "@microboat/web/*": ["./apps/web/src/*"],
+      "@microboat/ui": ["./packages/ui/src"],
+      "@microboat/ui/*": ["./packages/ui/src/*"],
+      "@microboat/auth": ["./packages/auth/src"],
+      "@microboat/auth/*": ["./packages/auth/src/*"],
+      "@microboat/database": ["./packages/database/src"],
+      "@microboat/database/*": ["./packages/database/src/*"],
+      "@microboat/mail": ["./packages/mail/src"],
+      "@microboat/mail/*": ["./packages/mail/src/*"],
+      "@microboat/payment": ["./packages/payment/src"],
+      "@microboat/payment/*": ["./packages/payment/src/*"],
+      "@microboat/storage": ["./packages/storage/src"],
+      "@microboat/storage/*": ["./packages/storage/src/*"],
+      "@microboat/i18n": ["./packages/i18n/src"],
+      "@microboat/i18n/*": ["./packages/i18n/src/*"],
+      "@microboat/shared": ["./packages/shared/src"],
+      "@microboat/shared/*": ["./packages/shared/src/*"],
+      "@microboat/config": ["./packages/config/src"],
+      "@microboat/config/*": ["./packages/config/src/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "**/dist", "**/.next"]
+}
