@@ -1,8 +1,8 @@
 {
   "app": {
-    "name": "NEXTDEVKIT",
+    "name": "MICROBOAT",
     "metadata": {
-      "title": "NEXTDEVKIT - Next.js Starter Kit",
+      "title": "MICROBOAT - Next.js Starter Kit",
       "description": "The Ultimate Next.js Starter Kit for Your Next Project",
       "keywords": "Next.js, Starter Kit, Next.js SaaS Template, Next.js Boilerplate"
     }

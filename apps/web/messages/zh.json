@@ -1,9 +1,9 @@
 {
   "app": {
-    "name": "NEXTDEVKIT",
+    "name": "MICROBOAT",
     "metadata": {
-      "title": "NEXTDEVKIT - Next.js 快速启动模板",
-      "description": "使用 NEXTDEVKIT 启动模板，快速构建和部署您的项目，一天而不是几个月！",
+      "title": "MICROBOAT - Next.js 快速启动模板",
+      "description": "使用 MICROBOAT 启动模板，快速构建和部署您的项目，一天而不是几个月！",
       "keywords": "Next.js 模板, Next.js SaaS 模板"
     }
   },
@@ -357,7 +357,7 @@
     "badgeText": "引入AI模型支持",
     "heading": "终极 Next.js 启动模板",
     "highlightHeading": "终极",
-    "subHeading": "使用 NEXTDEVKIT 启动模板，快速构建和部署您的项目，一天而不是几个月！",
+    "subHeading": "使用 MICROBOAT 启动模板，快速构建和部署您的项目，一天而不是几个月！",
     "buttons": {
       "getStarted": "开始使用",
       "seeDemo": "查看演示"

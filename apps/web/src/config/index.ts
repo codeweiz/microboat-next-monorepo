@@ -4,7 +4,7 @@ import { PaymentType, PlanInterval } from "@microboat/web/payment/types";
 export const appConfig = {
 	metadata: {
 		name: "NEXT DEV KIT",
-		title: "NEXTDEVKIT - Next.js Starter Kit",
+		title: "MICROBOAT - Next.js Starter Kit",
 		description: "The Ultimate Next.js Starter Kit for Your Next Project",
 		images: {
 			logoLight: "/logo-light.svg",
