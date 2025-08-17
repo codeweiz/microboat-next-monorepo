@@ -2,9 +2,9 @@
 
 import { PricingCard } from "@microboat/web/components/marketing/pricing/pricing-card";
 import { Tab } from "@microboat/web/components/marketing/pricing/pricing-tab";
-import type { PricePlan } from "@microboat/web/payment/types";
 import { useTranslations } from "next-intl";
 import * as React from "react";
+import {PricePlan} from "@microboat/common";
 
 interface PricingSectionProps {
 	title: string;

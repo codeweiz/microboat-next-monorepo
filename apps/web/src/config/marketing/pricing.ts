@@ -1,6 +1,6 @@
 import { appConfig } from "@microboat/web/config";
-import type { Price, PricePlan } from "@microboat/web/payment/types";
 import { getTranslations } from "next-intl/server";
+import {Price, PricePlan} from "@microboat/common";
 
 export interface PricingConfig {
 	title: string;

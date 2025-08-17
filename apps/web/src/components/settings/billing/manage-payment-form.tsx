@@ -1,11 +1,11 @@
 "use client";
 
+import { createCustomerPortal } from "@microboat/payment";
 import { Badge } from "@microboat/web/components/ui/badge";
 import { Button } from "@microboat/web/components/ui/button";
 import { Skeleton } from "@microboat/web/components/ui/skeleton";
 import { usePayment } from "@microboat/web/lib/hooks/use-payment";
 import { useSession } from "@microboat/web/lib/hooks/use-session";
-import { createCustomerPortal } from "@microboat/web/payment/actions";
 import { Loader2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";

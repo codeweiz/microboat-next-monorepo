@@ -8,7 +8,7 @@ import {
 	Users,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import type { SidebarNestedNavItem } from "./types";
+import {SidebarNestedNavItem} from "@microboat/common";
 
 export function getSidebarLinks(): SidebarNestedNavItem[] {
 	const t = useTranslations("menu");

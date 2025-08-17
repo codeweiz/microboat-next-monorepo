@@ -9,6 +9,7 @@ import {
 	Shield,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
+import {NavItem} from "@microboat/common";
 
 export function getNavItems(): NavItem[] {
 	const t = useTranslations("navigation");
@@ -160,7 +161,3 @@ export function getNavItems(): NavItem[] {
 		},
 	];
 }
-
-import type { NavItem, NavSubMenu, NavSubItem } from "@microboat/config";
-
-export type { NavItem, NavSubMenu, NavSubItem };

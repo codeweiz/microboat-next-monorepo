@@ -1,5 +1,4 @@
-import type { AppConfig } from "@microboat/web/config/types";
-import { PaymentType, PlanInterval } from "@microboat/web/payment/types";
+import {AppConfig, PaymentType, PlanInterval} from "@microboat/common";
 
 export const appConfig = {
 	metadata: {
@@ -59,7 +58,7 @@ export const appConfig = {
 		},
 	},
 	payment: {
-		provider: "creem",
+		provider: "stripe",
 		currency: "USD",
 		yearlyDiscount: 20,
 		redirectAfterCheckout: "/app/dashboard",
@@ -113,5 +112,3 @@ export const appConfig = {
 		},
 	},
 } as const satisfies AppConfig;
-
-export type { AppConfig };

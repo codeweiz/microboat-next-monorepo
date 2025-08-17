@@ -1,5 +1,5 @@
-import { getPaymentProvider } from "@microboat/web/payment/providers";
 import { type NextRequest, NextResponse } from "next/server";
+import {getPaymentProvider} from "@microboat/payment";
 
 export async function POST(request: NextRequest) {
 	try {

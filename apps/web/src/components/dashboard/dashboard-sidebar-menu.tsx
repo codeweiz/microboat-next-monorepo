@@ -8,9 +8,9 @@ import {
 	SidebarMenuButton,
 	SidebarMenuItem,
 } from "@microboat/web/components/ui/sidebar";
-import type { SidebarNestedNavItem } from "@microboat/web/config/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {SidebarNestedNavItem} from "@microboat/common";
 
 export function DashboardSidebarMenu({
 	items,

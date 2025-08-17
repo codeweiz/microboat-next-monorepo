@@ -11,11 +11,11 @@ import { appConfig } from "@microboat/web/config";
 import { useSession } from "@microboat/web/lib/hooks/use-session";
 import { getBaseUrl } from "@microboat/web/lib/urls";
 import { cn } from "@microboat/web/lib/utils";
-import { createCheckoutLink } from "@microboat/web/payment/actions";
-import { PlanInterval, type PricePlan } from "@microboat/web/payment/types";
 import { useRouter } from "next/navigation";
 import { useCallback, useMemo, useState } from "react";
 import { toast } from "sonner";
+import {PlanInterval, PricePlan} from "@microboat/common";
+import {createCheckoutLink} from "@microboat/payment";
 
 interface PricingCardProps {
 	plan: PricePlan;

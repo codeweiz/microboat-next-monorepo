@@ -28,15 +28,14 @@
     "delete:kv": "wrangler kv bulk delete kv.log --namespace-id=$(node scripts/get-kv-id.mjs) --remote"
   },
   "dependencies": {
-    "@microboat/ui": "workspace:*",
+    "@microboat/analytics": "workspace:*",
     "@microboat/auth": "workspace:*",
+    "@microboat/common": "workspace:*",
     "@microboat/database": "workspace:*",
     "@microboat/mail": "workspace:*",
     "@microboat/payment": "workspace:*",
     "@microboat/storage": "workspace:*",
     "@microboat/i18n": "workspace:*",
-    "@microboat/shared": "workspace:*",
-    "@microboat/config": "workspace:*",
     "@hookform/resolvers": "^5.1.1",
     "@libsql/client": "^0.15.9",
     "@number-flow/react": "^0.5.9",

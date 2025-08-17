@@ -1,5 +1,5 @@
-import { getUserPaymentStatus } from "@microboat/web/payment/actions";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
+import {getUserPaymentStatus} from "@microboat/payment";
 
 export const paymentQueryKey = (userId: string) =>
 	["payment", "status", userId] as const;

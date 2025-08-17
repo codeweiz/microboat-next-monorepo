@@ -1,6 +1,6 @@
 import {useTranslations} from "next-intl";
 import {getSocialMediaData} from "./social-media";
-import type {FooterData, QuickLink, Resource, LegalLink} from "@microboat/config";
+import {FooterData} from "@microboat/common";
 
 export function getFooterData(): FooterData {
     const t = useTranslations("footer");
@@ -41,5 +41,3 @@ export function getFooterData(): FooterData {
         ],
     };
 }
-
-export type {FooterData, QuickLink, Resource, LegalLink};

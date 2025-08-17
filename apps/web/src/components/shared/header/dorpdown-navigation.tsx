@@ -1,8 +1,8 @@
-import type { NavItem } from "@microboat/web/config/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import React, { useRef, useEffect } from "react";
+import {NavItem} from "@microboat/common";
 
 export function DropdownNavigation({ navItems }: { navItems: NavItem[] }) {
 	const [openMenu, setOpenMenu] = React.useState<string | null>(null);
