@@ -1,12 +1,8 @@
 import { SocialMediaIcons as Icons } from "@microboat/web/components/icons/social-media";
 import { useTranslations } from "next-intl";
-import type { ReactNode } from "react";
+import type { SocialMedia } from "@microboat/config";
 
-export interface SocialMedia {
-	name: string;
-	href: string;
-	icon: ReactNode;
-}
+export type { SocialMedia };
 
 export function getSocialMediaData(): {
 	title: string;

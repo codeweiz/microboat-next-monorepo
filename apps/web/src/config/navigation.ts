@@ -161,21 +161,6 @@ export function getNavItems(): NavItem[] {
 	];
 }
 
-export interface NavSubItem {
-	label: string;
-	description: string;
-	icon: React.ElementType;
-	link: string;
-}
+import type { NavItem, NavSubMenu, NavSubItem } from "@microboat/config";
 
-export interface NavSubMenu {
-	title: string;
-	items: NavSubItem[];
-}
-
-export interface NavItem {
-	id: number;
-	label: string;
-	link?: string;
-	subMenus?: NavSubMenu[];
-}
+export type { NavItem, NavSubMenu, NavSubItem };

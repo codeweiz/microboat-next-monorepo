@@ -1,15 +1,15 @@
-import { getEnabledAnalytics, hasEnabledAnalytics } from "@microboat/web/config/analytics";
+import { getEnabledAnalyticsConfig, hasEnabledAnalyticsConfig } from "@microboat/web/config/analytics";
 import type { CookieConsentConfig } from "vanilla-cookieconsent";
 
 const getConfig = () => {
-	const enabledAnalytics = getEnabledAnalytics();
-	const hasAnalytics = hasEnabledAnalytics();
+	const enabledAnalytics = getEnabledAnalyticsConfig();
+	const hasAnalytics = hasEnabledAnalyticsConfig();
 
 	// Build services object dynamically based on enabled analytics
 	const analyticsServices: Record<string, any> = {};
 
-	Object.entries(enabledAnalytics).forEach(([key, provider]) => {
-		analyticsServices[key] = {
+	enabledAnalytics.forEach((provider) => {
+		analyticsServices[provider.id] = {
 			label: provider.label,
 			onAccept: provider.onAccept,
 		};
@@ -153,7 +153,7 @@ const getConfig = () => {
 													desc: "Description",
 												},
 												body: [
-													...(enabledAnalytics.google
+													...(enabledAnalytics.find(p => p.id === 'google')
 														? [
 																{
 																	name: "_ga",
@@ -162,7 +162,7 @@ const getConfig = () => {
 																},
 															]
 														: []),
-													...(enabledAnalytics.umami
+													...(enabledAnalytics.find(p => p.id === 'umami')
 														? [
 																{
 																	name: "umami",
@@ -171,7 +171,7 @@ const getConfig = () => {
 																},
 															]
 														: []),
-													...(enabledAnalytics.plausible
+													...(enabledAnalytics.find(p => p.id === 'plausible')
 														? [
 																{
 																	name: "__plausible",

@@ -2,7 +2,7 @@
 
 import { Button } from "@microboat/web/components/ui/button";
 import { Skeleton } from "@microboat/web/components/ui/skeleton";
-import { type OAuthProvider, oAuthProviders } from "@microboat/web/config/oauth-provider";
+import { type OAuthProviderKeyType, oAuthProviders } from "@microboat/web/config/oauth-provider";
 import { authClient } from "@microboat/web/lib/auth/client";
 import { CheckCircle2Icon, LinkIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -18,10 +18,10 @@ export function ConnectSocialAccountForm({
 }: ConnectSocialAccountFormProps) {
 	const t = useTranslations();
 
-	const isProviderLinked = (provider: OAuthProvider) =>
+	const isProviderLinked = (provider: OAuthProviderKeyType) =>
 		accounts?.some((account) => account.provider === provider);
 
-	const linkProvider = (provider: OAuthProvider) => {
+	const linkProvider = (provider: OAuthProviderKeyType) => {
 		const callbackURL = window.location.href;
 		if (!isProviderLinked(provider)) {
 			authClient.linkSocial({
@@ -47,7 +47,7 @@ export function ConnectSocialAccountForm({
 
 				<div className="grid grid-cols-1">
 					{Object.entries(oAuthProviders).map(([provider, providerData]) => {
-						const isLinked = isProviderLinked(provider as OAuthProvider);
+						const isLinked = isProviderLinked(provider as OAuthProviderKeyType);
 
 						return (
 							<div
@@ -56,7 +56,7 @@ export function ConnectSocialAccountForm({
 							>
 								<div className="flex items-center gap-2">
 									<providerData.icon className="size-4 text-primary/50" />
-									<span className="text-sm">{providerData.name}</span>
+									<span className="text-sm">{providerData.displayName}</span>
 								</div>
 								{isPending ? (
 									<Skeleton className="h-10 w-28" />
@@ -65,7 +65,7 @@ export function ConnectSocialAccountForm({
 								) : (
 									<Button
 										variant="ghost"
-										onClick={() => linkProvider(provider as OAuthProvider)}
+										onClick={() => linkProvider(provider as OAuthProviderKeyType)}
 										className="font-bold cursor-pointer"
 									>
 										<LinkIcon className="mr-1.5 size-4" />

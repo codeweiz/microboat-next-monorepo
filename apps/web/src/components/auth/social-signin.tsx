@@ -2,15 +2,15 @@
 
 import { Button } from "@microboat/web/components/ui/button";
 import { appConfig } from "@microboat/web/config";
-import { type OAuthProvider, oAuthProviders } from "@microboat/web/config/oauth-provider";
+import { type OAuthProviderKeyType, oAuthProviders } from "@microboat/web/config/oauth-provider";
 import { authClient } from "@microboat/web/lib/auth/client";
 import { Loader2 } from "lucide-react";
 import { useState } from "react";
 
 export function SocialSignin() {
-	const [isLoading, setIsLoading] = useState<OAuthProvider | null>(null);
+	const [isLoading, setIsLoading] = useState<OAuthProviderKeyType | null>(null);
 
-	const handleOAuthSignin = async (provider: OAuthProvider) => {
+	const handleOAuthSignin = async (provider: OAuthProviderKeyType) => {
 		try {
 			setIsLoading(provider);
 
@@ -32,7 +32,7 @@ export function SocialSignin() {
 	return (
 		<div className="space-y-4">
 			{Object.entries(oAuthProviders).map(([providerId, providerData]) => {
-				const provider = providerId as OAuthProvider;
+				const provider = providerId as OAuthProviderKeyType;
 				const IconComponent = providerData.icon;
 				const isCurrentLoading = isLoading === provider;
 
@@ -49,7 +49,7 @@ export function SocialSignin() {
 						) : (
 							<IconComponent className="mr-3" />
 						)}
-						{providerData.name}
+						{providerData.displayName}
 					</Button>
 				);
 			})}

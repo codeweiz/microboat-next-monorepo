@@ -1,22 +1,22 @@
 import GitHub from "@microboat/web/components/icons/social-media/github";
 import Google from "@microboat/web/components/icons/social-media/google";
-import type { JSXElementConstructor } from "react";
+import { createOAuthProviders, type OAuthProviderKey } from "@microboat/config";
 
-export const oAuthProviders = {
+export const oAuthProviders = createOAuthProviders({
 	google: {
+		id: "google",
 		name: "Google",
+		displayName: "Google",
 		icon: Google,
+		enabled: true,
 	},
 	github: {
+		id: "github",
 		name: "GitHub",
+		displayName: "GitHub",
 		icon: GitHub,
+		enabled: true,
 	},
-} as const satisfies Record<
-	string,
-	{
-		name: string;
-		icon: JSXElementConstructor<React.SVGProps<SVGSVGElement>>;
-	}
->;
+});
 
-export type OAuthProvider = keyof typeof oAuthProviders;
+export type OAuthProviderKeyType = OAuthProviderKey<typeof oAuthProviders>;

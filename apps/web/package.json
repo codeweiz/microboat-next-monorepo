@@ -5,7 +5,8 @@
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
+    "dev:turbo": "next dev --turbopack",
     "build": "next build",
     "build:prod": "pnpm run opennext:build && wrangler deploy --dry-run --outdir=dist",
     "opennext:build": "opennextjs-cloudflare build",
