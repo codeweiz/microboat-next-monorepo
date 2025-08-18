@@ -1,4 +1,4 @@
-import { appConfig } from "@microboat/web/config";
+import { appConfigService } from "@microboat/web/config/app-config-service";
 import { getDefaultMessages } from "@microboat/web/i18n/messages";
 import EmailButton from "@microboat/web/mail/components/email-button";
 import EmailLayout from "@microboat/web/mail/components/layout";
@@ -40,7 +40,7 @@ export function ForgotPassword({
 }
 
 ForgotPassword.PreviewProps = {
-	locale: appConfig.i18n.defaultLocale,
+	locale: appConfigService.getI18n().defaultLocale,
 	messages: await getDefaultMessages(),
 	url: "#",
 };

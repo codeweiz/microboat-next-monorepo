@@ -3,7 +3,7 @@ import {
 	type mailTemplates,
 	type TemplateKey,
 } from "@microboat/web/mail/templates";
-import { appConfig } from "@microboat/web/config";
+import { appConfigService } from "@microboat/web/config/app-config-service";
 import { getMailProvider } from "@microboat/web/mail/providers";
 import type { Locale } from "next-intl";
 
@@ -26,7 +26,7 @@ export async function sendEmail<T extends TemplateKey>(
 		  }
 	),
 ) {
-	const { to, locale = appConfig.i18n.defaultLocale } = params;
+	const { to, locale = appConfigService.getI18n().defaultLocale } = params;
 
 	let html: string;
 	let text: string;

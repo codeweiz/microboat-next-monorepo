@@ -1,4 +1,4 @@
-import { appConfig } from "@microboat/web/config";
+import { appConfigService } from "@microboat/web/config/app-config-service";
 import { getSession } from "@microboat/web/lib/auth/edge";
 import createMiddleware from "next-intl/middleware";
 import { type NextRequest, NextResponse } from "next/server";
@@ -25,11 +25,11 @@ export default async function middleware(req: NextRequest) {
 			);
 		}
 
-		let locale = req.cookies.get(appConfig.i18n.localeCookieName)?.value;
+		let locale = req.cookies.get(appConfigService.getI18n().localeCookieName)?.value;
 
 		if (!locale || (session.user.locale && locale !== session.user.locale)) {
-			locale = session.user.locale ?? appConfig.i18n.defaultLocale;
-			response.cookies.set(appConfig.i18n.localeCookieName, locale);
+			locale = session.user.locale ?? appConfigService.getI18n().defaultLocale;
+			response.cookies.set(appConfigService.getI18n().localeCookieName, locale);
 		}
 
 		return response;
@@ -40,7 +40,7 @@ export default async function middleware(req: NextRequest) {
 
 		if (session && pathname !== "/auth/reset-password") {
 			return NextResponse.redirect(
-				new URL(appConfig.auth.redirectAfterSignIn, origin),
+				new URL(appConfigService.getAuth().redirectAfterSignIn, origin),
 			);
 		}
 

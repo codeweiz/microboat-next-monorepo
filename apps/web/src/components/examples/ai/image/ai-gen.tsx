@@ -69,7 +69,7 @@ interface HistoryItem {
 	type: GenerationMode;
 	url: string;
 	prompt: string;
-	timestamp: Date;
+	timestamp: string;
 }
 
 export { AIMultiModalGeneration };
@@ -94,14 +94,14 @@ function AIMultiModalGeneration() {
 			type: "image",
 			url: "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/profile-mjss82WnWBRO86MHHGxvJ2TVZuyrDv.jpeg",
 			prompt: "Portrait of a woman with orange background",
-			timestamp: new Date(Date.now() - 1000 * 60 * 5),
+			timestamp: new Date(Date.now() - 1000 * 60 * 5).toISOString(),
 		},
 		{
 			id: "2",
 			type: "image",
 			url: "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/profile-mjss82WnWBRO86MHHGxvJ2TVZuyrDv.jpeg",
 			prompt: "Professional headshot with blue background",
-			timestamp: new Date(Date.now() - 1000 * 60 * 30),
+			timestamp: new Date(Date.now() - 1000 * 60 * 30).toISOString(),
 		},
 	]);
 
@@ -264,7 +264,7 @@ function AIMultiModalGeneration() {
 							? "https://cdn.pixabay.com/photo/2023/08/03/09/57/ai-generated-8166705_1280.png"
 							: "https://cdn.pixabay.com/photo/2023/08/03/09/57/ai-generated-8166705_1280.png",
 				prompt: settings.prompt || "AI generated content",
-				timestamp: new Date(),
+				timestamp: new Date().toISOString(),
 			};
 
 			setGeneratedItems((prev) => [newItem, ...prev]);
@@ -348,8 +348,9 @@ function AIMultiModalGeneration() {
 		setIsRotating(!isRotating);
 	};
 
-	const formatDate = (date: Date) => {
+	const formatDate = (dateString: string) => {
 		const now = new Date();
+		const date = new Date(dateString);
 		const diffMs = now.getTime() - date.getTime();
 		const diffMins = Math.round(diffMs / 60000);
 

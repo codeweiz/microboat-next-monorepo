@@ -1,7 +1,7 @@
 import deepmerge from "deepmerge";
 import type { Locale, Messages } from "next-intl";
 import { routing } from "@microboat/web/i18n/routing";
-import { appConfig } from "@microboat/web/config";
+import { appConfigService } from "@microboat/web/config/app-config-service";
 
 const importLocale = async (locale: Locale): Promise<Messages> => {
 	return (await import(`../../messages/${locale}.json`)).default as Messages;
@@ -14,10 +14,10 @@ export const getMessagesForLocale = async (
 	if (locale === routing.defaultLocale) {
 		return localeMessages;
 	}
-	const defaultLocaleMessages = await importLocale(appConfig.i18n.defaultLocale);
+	const defaultLocaleMessages = await importLocale(appConfigService.getI18n().defaultLocale);
 	return deepmerge(defaultLocaleMessages, localeMessages);
 };
 
 export const getDefaultMessages = async (): Promise<Messages> => {
-	return await getMessagesForLocale(appConfig.i18n.defaultLocale);
+	return await getMessagesForLocale(appConfigService.getI18n().defaultLocale);
 };

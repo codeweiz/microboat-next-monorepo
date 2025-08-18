@@ -1,4 +1,4 @@
-import { appConfig } from "@microboat/web/config";
+import { appConfigService } from "@microboat/web/config/app-config-service";
 import type { Locale } from "next-intl";
 import { create } from "zustand";
 
@@ -8,7 +8,7 @@ interface LocaleState {
 }
 
 export const useLocaleStore = create<LocaleState>((set) => ({
-	currentLocale: appConfig.i18n.defaultLocale as Locale,
+	currentLocale: appConfigService.getI18n().defaultLocale as Locale,
 	setCurrentLocale: (locale) =>
 		set(() => ({
 			currentLocale: locale,

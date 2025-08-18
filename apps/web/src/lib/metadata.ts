@@ -1,4 +1,4 @@
-import { appConfig } from "@microboat/web/config";
+import { appConfigService } from "@microboat/web/config/app-config-service";
 import { getBaseUrl } from "@microboat/web/lib/urls";
 import type { Metadata } from "next";
 
@@ -15,10 +15,10 @@ export function metadata({
 	canonicalUrl?: string;
 	keywords?: string[];
 } = {}): Metadata {
-	title = title || appConfig.metadata.title;
-	description = description || appConfig.metadata.description;
-	image = image || appConfig.metadata.images?.ogImage;
-	keywords = keywords || appConfig.metadata.keywords;
+	title = title || appConfigService.getMetadata().title;
+	description = description || appConfigService.getMetadata().description;
+	image = image || appConfigService.getMetadata().images?.ogImage;
+	keywords = keywords || appConfigService.getMetadata().keywords;
 	const ogImageUrl = image.startsWith("/")
 		? new URL(`${getBaseUrl()}${image}`)
 		: new URL(image);
@@ -35,7 +35,7 @@ export function metadata({
 			url: canonicalUrl || getBaseUrl(),
 			title,
 			description,
-			siteName: appConfig.metadata.title,
+			siteName: appConfigService.getMetadata().title,
 			images: [ogImageUrl.toString()],
 		},
 		twitter: {

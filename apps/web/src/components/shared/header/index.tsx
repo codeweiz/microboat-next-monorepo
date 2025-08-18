@@ -8,7 +8,7 @@ import {
 	AccordionTrigger,
 } from "@microboat/web/components/ui/accordion";
 import { Button } from "@microboat/web/components/ui/button";
-import { appConfig } from "@microboat/web/config";
+import { useConfig } from "@microboat/common";
 import { getNavItems } from "@microboat/web/config/navigation";
 import { useSession } from "@microboat/web/lib/hooks/use-session";
 import { cn } from "@microboat/web/lib/utils";
@@ -20,6 +20,7 @@ import React from "react";
 
 export const Header = () => {
 	const [menuState, setMenuState] = React.useState(false);
+	const config = useConfig();
 	const t = useTranslations();
 	const navItems = getNavItems();
 	const { user } = useSession();
@@ -44,7 +45,7 @@ export const Header = () => {
 								className="flex items-center space-x-2 gap-4 font-extrabold text-xl"
 							>
 								<Logo />
-								{appConfig.metadata.name}
+								{config.getMetadata().name}
 							</Link>
 
 							<button

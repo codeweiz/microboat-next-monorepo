@@ -12,7 +12,7 @@ import {
 import { Input } from "@microboat/web/components/ui/input";
 import { Label } from "@microboat/web/components/ui/label";
 import { Skeleton } from "@microboat/web/components/ui/skeleton";
-import { appConfig } from "@microboat/web/config";
+import { useConfig } from "@microboat/common";
 import { authClient } from "@microboat/web/lib/auth/client";
 import { useAuthErrorMessages } from "@microboat/web/lib/auth/errors";
 import { useSession } from "@microboat/web/lib/hooks/use-session";
@@ -23,6 +23,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 export function ChangeNameEmailForm() {
+	const config = useConfig();
 	const { user, reloadSession } = useSession();
 	const t = useTranslations();
 	const { getAuthErrorMessage } = useAuthErrorMessages();
@@ -30,7 +31,7 @@ export function ChangeNameEmailForm() {
 	const [error, setError] = useState<string | null>(null);
 	const [success, setSuccess] = useState<string | null>(null);
 
-	const canChangeEmail = appConfig.settings.account.canChangeEmail;
+	const canChangeEmail = config.getSettings().account.canChangeEmail;
 
 	const formSchema = z.object({
 		name: z
@@ -92,7 +93,7 @@ export function ChangeNameEmailForm() {
 			if (hasEmailChanged && canChangeEmail) {
 				const { error: emailError } = await authClient.changeEmail({
 					newEmail: values.email,
-					callbackURL: appConfig.auth.redirectAfterSignIn,
+					callbackURL: config.getAuth().redirectAfterSignIn,
 				});
 
 				if (emailError) {

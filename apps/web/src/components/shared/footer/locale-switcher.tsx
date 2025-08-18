@@ -7,7 +7,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@microboat/web/components/ui/select";
-import { appConfig } from "@microboat/web/config";
+import { useConfig } from "@microboat/common";
 import { switchLocale } from "@microboat/web/i18n/lib/update-locale";
 import { usePathname } from "@microboat/web/i18n/navigation";
 import { useMounted } from "@microboat/web/lib/hooks/use-mounted";
@@ -18,7 +18,8 @@ import { useEffect, useId, useTransition } from "react";
 
 function LocaleSwitcher() {
 	const id = useId();
-	const isEnabled = appConfig.i18n.enabled;
+	const config = useConfig();
+	const isEnabled = config.getI18n().enabled;
 	const mounted = useMounted();
 
 	if (!isEnabled) {
@@ -92,13 +93,13 @@ function LocaleSwitcher() {
 						<span className="flex items-center gap-2">
 							<Languages />
 							<span className="truncate">
-								{appConfig.i18n.locales[currentLocale]?.name}
+								{config.getI18n().locales[currentLocale]?.name}
 							</span>
 						</span>
 					</SelectValue>
 				</SelectTrigger>
 				<SelectContent className="cursor-pointer">
-					{Object.entries(appConfig.i18n.locales).map(
+					{Object.entries(config.getI18n().locales).map(
 						([localeKey, { name }]) => (
 							<SelectItem key={localeKey} value={localeKey}>
 								<span className="flex items-center gap-2">

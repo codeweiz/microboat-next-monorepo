@@ -1,4 +1,4 @@
-import { appConfig } from "@microboat/web/config";
+import { appConfigService } from "@microboat/web/config/app-config-service";
 import { getTranslations } from "next-intl/server";
 import {Price, PricePlan} from "@microboat/common";
 
@@ -12,7 +12,7 @@ export interface PricingConfig {
 
 export async function getPricingConfig(): Promise<PricingConfig> {
 	const t = await getTranslations("pricing");
-	const priceConfig = appConfig.payment;
+	const priceConfig = appConfigService.getPayment();
 	const plans: PricePlan[] = [];
 	const frequencies = [t("frequencies.monthly"), t("frequencies.yearly")];
 
@@ -81,8 +81,8 @@ export async function getPricingConfig(): Promise<PricingConfig> {
 }
 
 export function getPriceByPriceId(priceId: string): Price | null {
-	for (const planKey in appConfig.payment.plans) {
-		const plan = appConfig.payment.plans[planKey];
+	for (const planKey in appConfigService.getPayment().plans) {
+		const plan = appConfigService.getPayment().plans[planKey];
 
 		if (plan.prices && Array.isArray(plan.prices)) {
 			const foundPrice = plan.prices.find((price) => price.priceId === priceId);

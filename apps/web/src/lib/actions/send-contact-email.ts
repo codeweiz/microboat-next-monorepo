@@ -1,6 +1,6 @@
 "use server";
 
-import { appConfig } from "@microboat/web/config";
+import { appConfigService } from "@microboat/web/config/app-config-service";
 import { actionClient } from "@microboat/web/lib/safe-action";
 import { sendEmail } from "@microboat/web/mail";
 import { getLocale } from "next-intl/server";
@@ -24,7 +24,7 @@ export const sendContactEmailAction = actionClient
 		try {
 			const { name, email, message } = parsedInput;
 
-			const contactEmail = appConfig.mail.contact;
+			const contactEmail = appConfigService.getMail().contact;
 
 			if (!contactEmail) {
 				console.error("The contact email not setup");

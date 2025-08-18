@@ -1,12 +1,12 @@
-import { appConfig } from "@microboat/web/config";
+import { appConfigService } from "@microboat/web/config/app-config-service";
 import { defineRouting } from "next-intl/routing";
 
 export const routing = defineRouting({
-	locales: Object.keys(appConfig.i18n.locales),
-	defaultLocale: appConfig.i18n.defaultLocale,
+	locales: Object.keys(appConfigService.getI18n().locales),
+	defaultLocale: appConfigService.getI18n().defaultLocale,
 	localeCookie: {
-		name: appConfig.i18n.localeCookieName,
+		name: appConfigService.getI18n().localeCookieName,
 	},
-	localeDetection: appConfig.i18n.enabled,
-	localePrefix: appConfig.i18n.enabled ? "as-needed" : "never",
+	localeDetection: appConfigService.getI18n().enabled,
+	localePrefix: appConfigService.getI18n().enabled ? "as-needed" : "never",
 });

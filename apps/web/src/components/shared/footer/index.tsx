@@ -5,10 +5,11 @@ import { LocaleSwitcher } from "@microboat/web/components/shared/footer/locale-s
 import { NewsletterSubscriberForm } from "@microboat/web/components/shared/footer/newsletter-subscriber-form";
 import { SocialButton } from "@microboat/web/components/shared/footer/social-button";
 import { ThemeSwitcher } from "@microboat/web/components/shared/footer/theme-switcher";
-import { appConfig } from "@microboat/web/config";
+import { useConfig } from "@microboat/common";
 import { getFooterData } from "@microboat/web/config/footer";
 
 function Footer() {
+	const config = useConfig();
 	const footerData = getFooterData();
 
 	return (
@@ -55,8 +56,8 @@ function Footer() {
 					</div>
 					<div className="relative">
 						<SocialButton />
-						{appConfig.ui.theme.enabled && <ThemeSwitcher />}
-						{appConfig.i18n.enabled && (
+						{config.getUi().theme.enabled && <ThemeSwitcher />}
+						{config.getI18n().enabled && (
 							<div className="py-6">
 								<LocaleSwitcher />
 							</div>

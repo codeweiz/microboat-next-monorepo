@@ -1,4 +1,4 @@
-import { appConfig } from "@microboat/web/config";
+import { appConfigService } from "@microboat/web/config/app-config-service";
 import { getUserLocale } from "@microboat/web/i18n/lib/locale-cookie";
 import { getMessagesForLocale } from "@microboat/web/i18n/messages";
 import { routing } from "@microboat/web/i18n/routing";
@@ -10,7 +10,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
 		requested = await getUserLocale();
 	}
 
-	if (!(routing.locales.includes(requested) && appConfig.i18n.enabled)) {
+	if (!(routing.locales.includes(requested) && appConfigService.getI18n().enabled)) {
 		requested = routing.defaultLocale;
 	}
 

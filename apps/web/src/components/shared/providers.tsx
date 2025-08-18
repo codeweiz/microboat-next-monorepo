@@ -3,6 +3,7 @@ import { ApiClientProvider } from "@microboat/web/components/shared/api-client-p
 import CookieConsentComponent from "@microboat/web/components/shared/cookie/cookie-consent";
 import { SessionProvider } from "@microboat/web/components/shared/session-provider";
 import { Toaster } from "@microboat/web/components/ui/sonner";
+import { ConfigProvider } from "@microboat/common";
 import { appConfig } from "@microboat/web/config";
 import { ThemeProvider } from "next-themes";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -27,22 +28,24 @@ export async function AppProviders({
 	return (
 		<html lang={locale} suppressHydrationWarning>
 			<head>
-				<AffonsoScript />
 			</head>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased min-w-screen overflow-x-hidden`}
 			>
-				<ThemeProvider
-					defaultTheme={defaultMode}
-					attribute="class"
-					enableSystem
-					disableTransitionOnChange
-				>
-					<ApiClientProvider>
-						<SessionProvider>{children}</SessionProvider>
-					</ApiClientProvider>
-					<Toaster richColors position="top-right" offset={64} />
-				</ThemeProvider>
+				<ConfigProvider config={appConfig}>
+					<AffonsoScript />
+					<ThemeProvider
+						defaultTheme={defaultMode}
+						attribute="class"
+						enableSystem
+						disableTransitionOnChange
+					>
+						<ApiClientProvider>
+							<SessionProvider>{children}</SessionProvider>
+						</ApiClientProvider>
+						<Toaster richColors position="top-right" offset={64} />
+					</ThemeProvider>
+				</ConfigProvider>
 			</body>
 			<CookieConsentComponent />
 		</html>

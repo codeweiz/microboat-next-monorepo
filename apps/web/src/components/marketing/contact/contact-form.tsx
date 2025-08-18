@@ -6,7 +6,7 @@ import { Button } from "@microboat/web/components/ui/button";
 import { Input } from "@microboat/web/components/ui/input";
 import { Label } from "@microboat/web/components/ui/label";
 import { Textarea } from "@microboat/web/components/ui/textarea";
-import { appConfig } from "@microboat/web/config";
+import { useConfig } from "@microboat/common";
 import { sendContactEmailAction } from "@microboat/web/lib/actions/send-contact-email";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
@@ -16,6 +16,7 @@ import { toast } from "sonner";
 import { z } from "zod";
 
 export function ContactForm() {
+	const config = useConfig();
 	const t = useTranslations("contact");
 	const [isPending, startTransition] = useTransition();
 
@@ -96,7 +97,7 @@ export function ContactForm() {
 							<div className="space-y-2">
 								<div>
 									<span className="text-muted-foreground">
-										{appConfig.mail.contact}
+										{config.getMail().contact}
 									</span>
 								</div>
 							</div>

@@ -1,4 +1,4 @@
-import { appConfig } from "@microboat/web/config";
+import { appConfigService } from "@microboat/web/config/app-config-service";
 import { S3StorageProvider } from "@microboat/web/storage/providers/s3";
 import type { StorageProvider } from "@microboat/web/storage/types";
 
@@ -13,7 +13,7 @@ export function getStorageProvider(): StorageProvider {
 		return storageProviderInstance;
 	}
 
-	const provider = appConfig.storage.provider as keyof typeof providers;
+	const provider = appConfigService.getStorage().provider as keyof typeof providers;
 	storageProviderInstance = new providers[provider]();
 	return storageProviderInstance;
 }

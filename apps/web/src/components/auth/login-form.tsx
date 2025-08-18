@@ -12,7 +12,7 @@ import {
 	FormMessage,
 } from "@microboat/web/components/ui/form";
 import { Input } from "@microboat/web/components/ui/input";
-import { appConfig } from "@microboat/web/config";
+import { useConfig } from "@microboat/common";
 import { authClient } from "@microboat/web/lib/auth/client";
 import { useAuthErrorMessages } from "@microboat/web/lib/auth/errors";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -26,7 +26,8 @@ import { SocialSignin } from "./social-signin";
 
 export function LoginForm() {
 	const router = useRouter();
-	const { enableSocialLogin, enablePasswordLogin } = appConfig.auth;
+	const config = useConfig();
+	const { enableSocialLogin, enablePasswordLogin } = config.getAuth();
 	const { getAuthErrorMessage } = useAuthErrorMessages();
 	const searchParams = useSearchParams();
 	const redirectTo = searchParams.get("redirectTo");
@@ -56,7 +57,7 @@ export function LoginForm() {
 
 	const isLoading = form.formState.isSubmitting;
 
-	const redirectPath = redirectTo ?? appConfig.auth.redirectAfterSignIn;
+	const redirectPath = redirectTo ?? config.getAuth().redirectAfterSignIn;
 
 	const onSubmit = async (values: LoginFormValues) => {
 		try {

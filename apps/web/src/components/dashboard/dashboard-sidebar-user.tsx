@@ -10,7 +10,7 @@ import {
 	DropdownMenuTrigger,
 } from "@microboat/web/components/ui/dropdown-menu";
 import { Skeleton } from "@microboat/web/components/ui/skeleton";
-import { appConfig } from "@microboat/web/config";
+import { useConfig } from "@microboat/common";
 import { useRouter } from "@microboat/web/i18n/navigation";
 import { authClient } from "@microboat/web/lib/auth/client";
 import { useIsMobile } from "@microboat/web/lib/hooks/use-mobile";
@@ -33,6 +33,7 @@ interface SidebarUserProps {
 }
 
 export function SidebarUser({ showUserName = true }: SidebarUserProps) {
+	const config = useConfig();
 	const router = useRouter();
 	const isMobile = useIsMobile();
 	const t = useTranslations("menu");
@@ -55,7 +56,7 @@ export function SidebarUser({ showUserName = true }: SidebarUserProps) {
 					},
 				},
 			});
-			router.replace(appConfig.auth.redirectAfterLogout);
+			router.replace(config.getAuth().redirectAfterLogout);
 		} catch (error) {
 			console.error("sign out error:", error);
 			setIsSigningOut(false);
@@ -114,7 +115,7 @@ export function SidebarUser({ showUserName = true }: SidebarUserProps) {
 					</div>
 				</DropdownMenuLabel>
 
-				{appConfig.ui.theme.enabled && (
+				{config.getUi().theme.enabled && (
 					<>
 						<DropdownMenuSeparator />
 						<div className="px-2 py-2">

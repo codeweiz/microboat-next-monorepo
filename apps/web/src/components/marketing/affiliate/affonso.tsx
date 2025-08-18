@@ -1,18 +1,20 @@
 "use client";
 
-import { appConfig } from "@microboat/web/config";
+import { useConfig } from "@microboat/common";
 import Script from "next/script";
 
 export default function AffonsoScript() {
+	const config = useConfig();
+	
 	if (process.env.NODE_ENV !== "production") {
 		return null;
 	}
 
-	if (!appConfig.affiliate.affonso.enabled) {
+	if (!config.getAffiliate().affonso.enabled) {
 		return null;
 	}
 
-	const affiliateId = appConfig.affiliate.affonso.id;
+	const affiliateId = config.getAffiliate().affonso.id;
 	if (!affiliateId) {
 		return null;
 	}

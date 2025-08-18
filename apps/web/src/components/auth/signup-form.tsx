@@ -12,7 +12,7 @@ import {
 	FormMessage,
 } from "@microboat/web/components/ui/form";
 import { Input } from "@microboat/web/components/ui/input";
-import { appConfig } from "@microboat/web/config";
+import { useConfig } from "@microboat/common";
 import { authClient } from "@microboat/web/lib/auth/client";
 import { useAuthErrorMessages } from "@microboat/web/lib/auth/errors";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -25,7 +25,8 @@ import * as z from "zod";
 import { SocialSignin } from "./social-signin";
 
 export function SignupForm() {
-	const { enableSocialLogin, enablePasswordLogin } = appConfig.auth;
+	const config = useConfig();
+	const { enableSocialLogin, enablePasswordLogin } = config.getAuth();
 	const { getAuthErrorMessage } = useAuthErrorMessages();
 	const searchParams = useSearchParams();
 	const redirectTo = searchParams.get("redirectTo");
@@ -63,7 +64,7 @@ export function SignupForm() {
 	});
 
 	const isLoading = form.formState.isSubmitting;
-	const redirectPath = redirectTo ?? appConfig.auth.redirectAfterSignIn;
+	const redirectPath = redirectTo ?? config.getAuth().redirectAfterSignIn;
 
 	const onSubmit = async (values: SignupFormValues) => {
 		try {
@@ -83,7 +84,7 @@ export function SignupForm() {
 						setSuccess(t("signup.successMessage"));
 						form.reset();
 
-						if (appConfig.affiliate.affonso.enabled) {
+						if (config.getAffiliate().affonso.enabled) {
 							console.log("signup by affonso affiliate:", values.email);
 							// @ts-expect-error - Affonso is not typed
 							window.Affonso.signup(values.email);

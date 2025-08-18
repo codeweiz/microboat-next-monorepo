@@ -1,4 +1,4 @@
-import { appConfig } from "@microboat/web/config";
+import { appConfigService } from "@microboat/web/config/app-config-service";
 import type { MailProvider, SendParams } from "@microboat/web/mail/types";
 
 export class PlunkMailProvider implements MailProvider {
@@ -7,7 +7,7 @@ export class PlunkMailProvider implements MailProvider {
 
 		constructor() {
 			const apiKey = process.env.PLUNK_API_KEY;
-			const { from } = appConfig.mail;
+			const { from } = appConfigService.getMail();
 
 			if (!apiKey) {
 				throw new Error("Environment variable PLUNK_API_KEY is not set");

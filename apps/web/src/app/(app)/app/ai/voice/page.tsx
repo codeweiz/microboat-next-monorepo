@@ -5,13 +5,13 @@ import { useState } from "react";
 
 export default function VoicePage() {
 	const [recordings, setRecordings] = useState<
-		{ duration: number; timestamp: Date }[]
+		{ duration: number; timestamp: string }[]
 	>([]);
 
 	const handleStop = (duration: number) => {
 		setRecordings((prev) => [
 			...prev.slice(-4),
-			{ duration, timestamp: new Date() },
+			{ duration, timestamp: new Date().toISOString() },
 		]);
 	};
 

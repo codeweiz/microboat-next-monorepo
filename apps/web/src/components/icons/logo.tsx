@@ -1,6 +1,6 @@
 "use client";
 
-import { appConfig } from "@microboat/web/config";
+import { useConfig } from "@microboat/common";
 import { cn } from "@microboat/web/lib/utils";
 import { useTheme } from "next-themes";
 import Image from "next/image";
@@ -8,9 +8,10 @@ import { useEffect, useState } from "react";
 
 export const Logo = ({ className }: { className?: string }) => {
 	const { resolvedTheme } = useTheme();
+	const config = useConfig();
 	const [mounted, setMounted] = useState(false);
-	const logoLight = appConfig.metadata.images?.logoLight ?? "/logo.png";
-	const logoDark = appConfig.metadata.images?.logoDark ?? logoLight;
+	const logoLight = config.getMetadata().images?.logoLight ?? "/logo.png";
+	const logoDark = config.getMetadata().images?.logoDark ?? logoLight;
 
 	const logo = mounted && resolvedTheme === "dark" ? logoDark : logoLight;
 

@@ -1,4 +1,4 @@
-import { appConfig } from "@microboat/web/config";
+import { appConfigService } from "@microboat/web/config/app-config-service";
 import { getStorageProvider } from "@microboat/web/storage/providers";
 import { NextResponse } from "next/server";
 
@@ -17,7 +17,7 @@ export const GET = async (
 		return new Response("Invalid path", { status: 400 });
 	}
 
-	if (bucket === appConfig.storage.bucketNames.avatars) {
+	if (bucket === appConfigService.getStorage().bucketNames.avatars) {
 		const signedUrl = await getStorageProvider().getSignedUrl({
 			bucket,
 			key: filePath,

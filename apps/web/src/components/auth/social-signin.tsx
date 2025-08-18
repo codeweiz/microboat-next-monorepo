@@ -1,13 +1,14 @@
 "use client";
 
 import { Button } from "@microboat/web/components/ui/button";
-import { appConfig } from "@microboat/web/config";
+import { useConfig } from "@microboat/common";
 import { type OAuthProviderKeyType, oAuthProviders } from "@microboat/web/config/oauth-provider";
 import { authClient } from "@microboat/web/lib/auth/client";
 import { Loader2 } from "lucide-react";
 import { useState } from "react";
 
 export function SocialSignin() {
+	const config = useConfig();
 	const [isLoading, setIsLoading] = useState<OAuthProviderKeyType | null>(null);
 
 	const handleOAuthSignin = async (provider: OAuthProviderKeyType) => {
@@ -16,7 +17,7 @@ export function SocialSignin() {
 
 			await authClient.signIn.social({
 				provider,
-				callbackURL: `${window.location.origin}${appConfig.auth.redirectAfterSignIn}`,
+				callbackURL: `${window.location.origin}${config.getAuth().redirectAfterSignIn}`,
 			});
 		} catch (error) {
 			console.error(`Error signing in with ${provider}:`, error);
@@ -25,7 +26,7 @@ export function SocialSignin() {
 		}
 	};
 
-	if (!appConfig.auth.enableSocialLogin) {
+	if (!config.getAuth().enableSocialLogin) {
 		return null;
 	}
 

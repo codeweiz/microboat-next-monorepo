@@ -1,5 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@microboat/web/components/ui/avatar";
-import { appConfig } from "@microboat/web/config";
+import { useConfig } from "@microboat/common";
 import { forwardRef, useMemo } from "react";
 
 export const UserAvatar = forwardRef<
@@ -10,6 +10,7 @@ export const UserAvatar = forwardRef<
 		className?: string;
 	}
 >(({ name, image, className }, ref) => {
+	const config = useConfig();
 	const initials = useMemo(
 		() =>
 			name
@@ -24,7 +25,7 @@ export const UserAvatar = forwardRef<
 			image
 				? image.startsWith("http")
 					? image
-					: `/image-proxy/${appConfig.storage.bucketNames.avatars}/${image}`
+					: `/image-proxy/${config.getStorage().bucketNames.avatars}/${image}`
 				: undefined,
 		[image],
 	);

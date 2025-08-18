@@ -3,7 +3,7 @@
 import { CustomFormMessage } from "@microboat/web/components/shared/custom-form-message";
 import { UserAvatar } from "@microboat/web/components/shared/user-avatar";
 import { Skeleton } from "@microboat/web/components/ui/skeleton";
-import { appConfig } from "@microboat/web/config";
+import { useConfig } from "@microboat/common";
 import { authClient } from "@microboat/web/lib/auth/client";
 import { useAuthErrorMessages } from "@microboat/web/lib/auth/errors";
 import { useSession } from "@microboat/web/lib/hooks/use-session";
@@ -13,6 +13,7 @@ import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 
 export function ChangeAvatarForm() {
+	const config = useConfig();
 	const { user, reloadSession } = useSession();
 	const t = useTranslations();
 	const { getAuthErrorMessage } = useAuthErrorMessages();
@@ -55,7 +56,7 @@ export function ChangeAvatarForm() {
 
 			// Get signed upload URL
 			const result = await getSignedUploadUrl({
-				bucket: appConfig.storage.bucketNames.avatars,
+				bucket: config.getStorage().bucketNames.avatars,
 				key: avatarKey,
 				contentType: file.type,
 			});

@@ -1,4 +1,4 @@
-import { appConfig } from "@microboat/web/config";
+import { appConfigService } from "@microboat/web/config/app-config-service";
 import type { MailProvider, SendParams } from "@microboat/web/mail/types";
 import { Resend } from "resend";
 
@@ -9,7 +9,7 @@ export class ResendMailProvider implements MailProvider {
 
 	constructor() {
 		const resendApiKey = process.env.RESEND_API_KEY;
-		const { from } = appConfig.mail;
+		const { from } = appConfigService.getMail();
 
 		if (!resendApiKey) {
 			throw new Error("Environment variable RESEND_API_KEY is not set");

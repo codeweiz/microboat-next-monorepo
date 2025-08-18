@@ -1,4 +1,4 @@
-import { appConfig } from "@microboat/web/config";
+import { appConfigService } from "@microboat/web/config/app-config-service";
 import { routing } from "@microboat/web/i18n/routing";
 import { getBaseUrl } from "@microboat/web/lib/urls";
 import type { MetadataRoute } from "next";
@@ -57,10 +57,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	// Add static routes for all locales
 	sitemapList.push(
 		...staticRoutes.flatMap((route) => {
-			if (appConfig.i18n.enabled) {
+			if (appConfigService.getI18n().enabled) {
 				return routing.locales.map((locale) => {
 					// For default locale (en), don't add prefix
-					if (locale === appConfig.i18n.defaultLocale) {
+					if (locale === appConfigService.getI18n().defaultLocale) {
 						return {
 							url: `${baseUrl}${route}`,
 							lastModified: new Date(),

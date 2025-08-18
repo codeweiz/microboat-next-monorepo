@@ -4,7 +4,7 @@ import { createTranslator } from "use-intl/core";
 import EmailLayout from "@microboat/web/mail/components/layout";
 import { getDefaultMessages } from "@microboat/web/i18n/messages";
 import type { i18nEmailProps } from "@microboat/web/mail/types";
-import { appConfig } from "@microboat/web/config";
+import { appConfigService } from "@microboat/web/config/app-config-service";
 import EmailButton from "@microboat/web/mail/components/email-button";
 
 export function EmailVerification({
@@ -40,7 +40,7 @@ export function EmailVerification({
 }
 
 EmailVerification.PreviewProps = {
-	locale: appConfig.i18n.defaultLocale,
+	locale: appConfigService.getI18n().defaultLocale,
 	messages: await getDefaultMessages(),
 	url: "#",
 	name: "John Doe",

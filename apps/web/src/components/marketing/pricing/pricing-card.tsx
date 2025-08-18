@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 import { Badge } from "@microboat/web/components/ui/badge";
 import { Button } from "@microboat/web/components/ui/button";
 import { Card } from "@microboat/web/components/ui/card";
-import { appConfig } from "@microboat/web/config";
+import { useConfig } from "@microboat/common";
 import { useSession } from "@microboat/web/lib/hooks/use-session";
 import { getBaseUrl } from "@microboat/web/lib/urls";
 import { cn } from "@microboat/web/lib/utils";
@@ -24,6 +24,7 @@ interface PricingCardProps {
 
 export function PricingCard({ plan, paymentFrequency }: PricingCardProps) {
 	const [isLoading, setIsLoading] = useState(false);
+	const config = useConfig();
 	const t = useTranslations("pricing");
 	const monthlyText = t("frequencies.monthly");
 	const yearlyText = t("frequencies.yearly");
@@ -61,8 +62,8 @@ export function PricingCard({ plan, paymentFrequency }: PricingCardProps) {
 				throw new Error("No price found");
 			}
 
-			const redirectUrl = appConfig.payment.redirectAfterCheckout
-				? getBaseUrl() + appConfig.payment.redirectAfterCheckout
+			const redirectUrl = config.getPayment().redirectAfterCheckout
+				? getBaseUrl() + config.getPayment().redirectAfterCheckout
 				: window.location.href;
 
 			console.log("checkout with referralId:", referralId);
@@ -149,7 +150,7 @@ export function PricingCard({ plan, paymentFrequency }: PricingCardProps) {
 	const cta = useMemo(() => getCtaText(), [getCtaText]);
 	const isHighlighted = plan.highlighted;
 	const isPopular = plan.popular;
-	const currency = appConfig.payment.currency;
+	const currency = config.getPayment().currency;
 
 	return (
 		<Card

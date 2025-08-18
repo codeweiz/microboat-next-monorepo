@@ -9,7 +9,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@microboat/web/components/ui/select";
-import { appConfig } from "@microboat/web/config";
+import { useConfig } from "@microboat/common";
 import { updateLocale } from "@microboat/web/i18n/lib/update-locale";
 import { useRouter } from "@microboat/web/i18n/navigation";
 import { authClient } from "@microboat/web/lib/auth/client";
@@ -20,6 +20,7 @@ import { useState } from "react";
 
 export function ChangeLanguageForm() {
 	const { currentLocale, setCurrentLocale } = useLocaleStore();
+	const config = useConfig();
 	const t = useTranslations();
 	const router = useRouter();
 	const { getAuthErrorMessage } = useAuthErrorMessages();
@@ -83,17 +84,13 @@ export function ChangeLanguageForm() {
 								<SelectValue placeholder="Select language">
 									<span className="flex items-center gap-2">
 										<span className="truncate">
-											{
-												appConfig.i18n.locales[
-													currentLocale as keyof typeof appConfig.i18n.locales
-												]?.name
-											}
+											{config.getI18n().locales[currentLocale]?.name}
 										</span>
 									</span>
 								</SelectValue>
 							</SelectTrigger>
 							<SelectContent>
-								{Object.entries(appConfig.i18n.locales).map(
+								{Object.entries(config.getI18n().locales).map(
 									([localeKey, { name }]) => (
 										<SelectItem key={localeKey} value={localeKey}>
 											<span className="flex items-center gap-2">
