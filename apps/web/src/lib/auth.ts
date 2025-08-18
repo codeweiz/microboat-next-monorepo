@@ -1,6 +1,7 @@
 import {getLocaleFromRequest} from "@microboat/web/lib/i18n";
 import {getBaseUrl} from "@microboat/web/lib/urls";
-import {sendEmail} from "@microboat/web/mail";
+import {MailService} from "@microboat/mail";
+import {appConfigService} from "@microboat/web/config/app-config-service";
 import {betterAuth} from "better-auth";
 import {drizzleAdapter} from "better-auth/adapters/drizzle";
 import {admin} from "better-auth/plugins";
@@ -48,7 +49,8 @@ export const auth = betterAuth({
                 request,
             ) => {
                 const locale = getLocaleFromRequest(request);
-                await sendEmail({
+                const mailService = new MailService(appConfigService);
+                await mailService.sendEmail({
                     to: email,
                     templateKey: "emailVerification",
                     context: {
@@ -65,7 +67,8 @@ export const auth = betterAuth({
         requireEmailVerification: true,
         sendResetPassword: async ({user: {email, name}, url}, request) => {
             const locale = getLocaleFromRequest(request);
-            await sendEmail({
+            const mailService = new MailService(appConfigService);
+            await mailService.sendEmail({
                 to: email,
                 templateKey: "forgotPassword",
                 context: {
@@ -81,7 +84,8 @@ export const auth = betterAuth({
         autoSignInAfterVerification: true,
         sendVerificationEmail: async ({user: {email, name}, url}, request) => {
             const locale = getLocaleFromRequest(request);
-            await sendEmail({
+            const mailService = new MailService(appConfigService);
+            await mailService.sendEmail({
                 to: email,
                 templateKey: "emailVerification",
                 context: {

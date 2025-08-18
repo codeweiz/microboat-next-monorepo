@@ -8,7 +8,7 @@ import {
 	isSubscribedToNewsletter,
 	subscribeToNewsletter,
 	unsubscribeFromNewsletter,
-} from "@microboat/web/mail/actions";
+} from "@microboat/web/lib/actions/newsletter-actions";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 

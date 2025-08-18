@@ -2,7 +2,7 @@
 
 import { appConfigService } from "@microboat/web/config/app-config-service";
 import { actionClient } from "@microboat/web/lib/safe-action";
-import { sendEmail } from "@microboat/web/mail";
+import { MailService } from "@microboat/mail";
 import { getLocale } from "next-intl/server";
 import { z } from "zod";
 
@@ -33,7 +33,8 @@ export const sendContactEmailAction = actionClient
 
 			const locale = await getLocale();
 
-			const isSuccess = await sendEmail({
+			const mailService = new MailService(appConfigService);
+			const isSuccess = await mailService.sendEmail({
 				to: contactEmail,
 				templateKey: "contactForm",
 				context: {

@@ -3,7 +3,7 @@
 import { CustomFormMessage } from "@microboat/web/components/shared/custom-form-message";
 import { Button } from "@microboat/web/components/ui/button";
 import { Input } from "@microboat/web/components/ui/input";
-import { subscribeToNewsletter } from "@microboat/web/mail/actions";
+import { subscribeToNewsletter } from "@microboat/web/lib/actions/newsletter-actions";
 import { Check, Send } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
